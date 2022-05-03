@@ -43,12 +43,17 @@ footer {}
   align-items: center;
 }
 
+.size {
+  width: 40vw;
+}
+
 #height,
 #weight {
   width: 7vw;
 }
 
-.activity {
+.activity,
+.goals {
   display: flex;
   flex-direction: column;
   width: 40vw;
