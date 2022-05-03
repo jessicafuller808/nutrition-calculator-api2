@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <!-- Suppress the small zoom applied by many smartphones by setting the initial scale and minimum-scale values to 0.86. The result is horizontal scroll is suppressed in any orientation and the user can zoom in if they want to. (Source: MDN - https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) -->
   <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
-  <meta name="description" content="Your description goes here">
+  <meta name="description"
+    content="Nutrition Calculator that totals your calories and macros according to your body & goals.">
   <meta name="keywords" content="one, two, three">
 
-  <title>Your Title</title>
+  <title>Calorie & Macro Calculator</title>
 
   <!-- external CSS link -->
   <link rel="stylesheet" href="css/reset.css" type="text/css">
@@ -16,7 +17,16 @@
 </head>
 
 <body>
-  Hello world
+  <form>
+    <fieldset>
+      <legend>Enter your stats</legend>
+      <label for="myBrowser">Choose an age from this list:</label>
+      <input list="ages" id="age" name="age" />
+      <datalist id="ages">
+      </datalist>
+    </fieldset>
+    </label>
+  </form>>
   <script type='text/javascript' src='js/config.js'></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
