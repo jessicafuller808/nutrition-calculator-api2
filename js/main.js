@@ -6,22 +6,32 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com',
-		'X-RapidAPI-Key': key
+		'X-RapidAPI-Key': key //key object created in config file
 	}
 };
 
-//array containing ages 
-// ? bet I can make a for loop instead of having to type this
-const agesArr = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+//grabs api from the server with api key from options object
+fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male&height=180&weight=70&activitylevel=level_1', options)
+	.then(response => response.json()) //turns response to JSON
+	.then(response => console.log(response)) //prints response to console
+	.catch(err => console.error(err));//if error, prints error to console
 
-//loop through the ages array and append an option to the dom for each element.
+
+//array that will contain ages 
+const agesArr = [];
+
+//loop that creates ages 16-100 for the ages list
+for (let i = 16; i < 101; i++) {
+	agesArr.push(i);
+}
+
+//Confirms loop is pushing ages to the array
+console.log(agesArr);
+
+//loops through the ages array
 agesArr.forEach(e => {
-	//grabs ages datalist from the Dom, appends a child of a new option with the text + value of e
+	//for each age, grabs the datalist from the Dom, creates a new child option with the text + value of age
 	document.getElementById('ages').appendChild(new Option(e, e));
 })
 
 
-fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male&height=180&weight=70&activitylevel=level_1', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
