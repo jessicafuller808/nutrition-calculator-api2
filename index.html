@@ -18,16 +18,29 @@
 
 <body>
   <form>
-    <fieldset>
+    <fieldset id="form">
       <legend>Enter your stats</legend>
-      <label for="myBrowser">
+
+      <label for="age">
         Select age:
+        <input list="ages" id="age" name="age" />
+        <datalist id="ages">
+        </datalist>
       </label>
-      <input list="ages" id="age" name="age" />
-      <datalist id="ages">
-      </datalist>
+
+      <fieldset>
+        <legend>Select Gender</legend>
+        <label for="female">
+          Female
+          <input type="radio" id="female" name="gender" value="female">
+        </label>
+        <label for="male">
+          Male
+          <input type="radio" id="male" name="gender" value="male">
+        </label>
+      </fieldset>
     </fieldset>
-    </label>
+
   </form>
   <script type='text/javascript' src='js/config.js'></script>
   <script type="text/javascript" src="js/main.js"></script>

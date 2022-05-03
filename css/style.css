@@ -1,5 +1,7 @@
 /* Box Model Hack */
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -32,4 +34,9 @@ footer {}
 #age {
   width: 5em;
   cursor: pointer;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
 }
