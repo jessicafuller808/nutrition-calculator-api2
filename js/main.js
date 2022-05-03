@@ -6,7 +6,7 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com',
-		'X-RapidAPI-Key': key //key object created in config file
+		'X-RapidAPI-Key': key 
 	}
 };
 
@@ -20,7 +20,7 @@ fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male
 //array that will contain ages 
 const agesArr = [];
 
-//loop that creates ages 16-100 for the ages list
+//loop that creates ages 16-100 for the ages list options
 for (let i = 16; i < 101; i++) {
 	agesArr.push(i);
 }
@@ -30,8 +30,16 @@ console.log(agesArr);
 
 //loops through the ages array
 agesArr.forEach(e => {
-	//for each age, grabs the datalist from the Dom, creates a new child option with the text + value of age
+	//for each age element, grabs the datalist from the Dom, creates a new child option with the text + value of age as params
 	document.getElementById('ages').appendChild(new Option(e, e));
 })
 
+//TODO: make an input that takes a user's height (cm)
 
+//TODO: create an input that accepts a user's weight (kg)
+
+//TODO: create an input that allows a user to select the radio button that corresponds to their activity level
+
+//TODO: create an input that allows a user to select the radio button that corresponds to their goal. 
+
+//TODO: Display responses from server on the page
