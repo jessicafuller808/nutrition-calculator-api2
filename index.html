@@ -12,24 +12,24 @@
   <title>Calorie & Macro Calculator</title>
 
   <!-- external CSS link -->
-  <link rel="stylesheet" href="css/reset.css" type="text/css">
+  <!-- <link rel="stylesheet" href="css/reset.css" type="text/css"> -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
   <form>
     <fieldset id="form">
-      <legend>Enter your stats</legend>
+      <legend>Your Stats</legend>
 
       <label for="age">
-        Select age:
-        <input list="ages" id="age" name="age" />
+        Age:
+        <input list="ages" id="age" name="age" min="16" max="100" />
         <datalist id="ages">
         </datalist>
       </label>
 
       <fieldset>
-        <legend>Select Gender</legend>
+        <legend>Gender</legend>
         <label for="female">
           Female
           <input type="radio" id="female" name="gender" value="female">
@@ -39,6 +39,47 @@
           <input type="radio" id="male" name="gender" value="male">
         </label>
       </fieldset>
+
+      <fieldset class="size">
+        <legend>Size</legend>
+        <label for="height">
+          Height, in cm
+          <input type="number" maxlength="3" id="height" min="70" max="270">
+        </label>
+        <label for="weight">
+          Weight, in kg
+          <input type="number" maxlength="3" id="weight" min="31" max="226">
+        </label>
+      </fieldset>
+
+      <fieldset class="activity">
+        <legend>Activity Level</legend>
+        <label for="level1">
+          <input type="radio" id="level1" name="activity" value="1">
+          Level 1: Sedentary: little or no exercise
+        </label>
+        <label for="level2">
+          <input type="radio" id="level2" name="activity" value="2">
+          Level 2: Exercise 1-3 times/week
+        </label>
+        <label for="level3">
+          <input type="radio" id="level3" name="activity" value="3">
+          Level 3: Exercise 4-5 times/week
+        </label>
+        <label for="level4">
+          <input type="radio" id="level4" name="activity" value="4">
+          Level 4: Daily exercise or intense exercise 3-4 times/week
+        </label>
+        <label for="level5">
+          <input type="radio" id="level5" name="activity" value="5">
+          Level 5: Intense exercise 6-7 times/week
+        </label>
+        <label for="level2">
+          <input type="radio" id="level6" name="activity" value="6">
+          Level 6: Very intense exercise daily, or physical job
+        </label>
+      </fieldset>
+
     </fieldset>
 
   </form>
