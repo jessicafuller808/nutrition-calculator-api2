@@ -1,7 +1,7 @@
 //API key hidden in untracked file
 const key = config.MY_API_TOKEN;
 
-//connects to the server with the key variable
+//connects to the api server with the key variable
 const options = {
 	method: 'GET',
 	headers: {
@@ -10,7 +10,7 @@ const options = {
 	}
 };
 
-//array that will contain ages 
+//Creating array to hold ages for ages datalist
 const agesArr = [];
 
 //loop that creates ages 16-100 for the ages list options
@@ -18,25 +18,22 @@ for (let i = 16; i < 101; i++) {
 	agesArr.push(i);
 }
 
-//Confirms loop is pushing ages to the array
-console.log(agesArr);
-
-//grabs api from the server with api key from options object
-fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male&height=180&weight=70&activitylevel=level_1', options)
-	.then(response => response.json()) //turns response to JSON
-	.then(response => console.log(response)) //prints response to console
-	.catch(err => console.error(err));//if error, prints error to console
-
-
-
-
-//loops through the ages array
+//creating and appending and option for each age with the age as the text and value
 agesArr.forEach(e => {
-	//for each age element, grabs the datalist from the Dom, creates a new child option with the text + value of age as params
 	document.getElementById('ages').appendChild(new Option(e, e));
 })
 
-//TODO: Create a submit button
+document.getElementById('submit').addEventListener('click', submitData);
+
+function submitData() {
+	let age = document.getElementById('age').value;
+
+	fetch(`https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${age}&gender=male&height=180&weight=70&activitylevel=level_1`, options)
+		.then(response => response.json()) //turns response to JSON
+		.then(response => console.log(response)) //prints response to console
+		.catch(err => console.error(err));//if error, prints error to console
+}
+
 
 //TODO: Create a function where the submit button is clicked, it sends all of the values from the form to the server. These values become variables in the fetch request.
 
