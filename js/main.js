@@ -34,12 +34,8 @@ agesArr.forEach(e => {
 	document.getElementById('ages').appendChild(new Option(e, e));
 })
 
-//TODO: make an input that takes a user's height (cm)
+//TODO: Create a submit button
 
-//TODO: create an input that accepts a user's weight (kg)
+//TODO: Create a function where the submit button is clicked, it sends all of the values from the form to the server. These values become variables in the fetch request.
 
-//TODO: create an input that allows a user to select the radio button that corresponds to their activity level
-
-//TODO: create an input that allows a user to select the radio button that corresponds to their goal. 
-
-//TODO: Display responses from server on the page
+//TODO: Display response from server on the page
