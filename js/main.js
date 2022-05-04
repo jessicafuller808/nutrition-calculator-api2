@@ -10,13 +10,6 @@ const options = {
 	}
 };
 
-//grabs api from the server with api key from options object
-fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male&height=180&weight=70&activitylevel=level_1', options)
-	.then(response => response.json()) //turns response to JSON
-	.then(response => console.log(response)) //prints response to console
-	.catch(err => console.error(err));//if error, prints error to console
-
-
 //array that will contain ages 
 const agesArr = [];
 
@@ -27,6 +20,15 @@ for (let i = 16; i < 101; i++) {
 
 //Confirms loop is pushing ages to the array
 console.log(agesArr);
+
+//grabs api from the server with api key from options object
+fetch('https://fitness-calculator.p.rapidapi.com/dailycalorie?age=25&gender=male&height=180&weight=70&activitylevel=level_1', options)
+	.then(response => response.json()) //turns response to JSON
+	.then(response => console.log(response)) //prints response to console
+	.catch(err => console.error(err));//if error, prints error to console
+
+
+
 
 //loops through the ages array
 agesArr.forEach(e => {
